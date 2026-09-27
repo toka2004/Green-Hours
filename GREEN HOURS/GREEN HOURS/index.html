@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Hours | Industrial Energy Optimizer</title>
+    <meta
+      name="description"
+      content="AI-powered smart energy optimization dashboard"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <!-- Sidebar -->
+      <aside class="sidebar" aria-label="Application sidebar">
+        <div class="brand">
+          <span class="brand-mark">ϟ</span>
+          <span><strong>Green Hours</strong><small>AI OPTIMIZER</small></span>
+        </div>
+        <nav aria-label="Main navigation">
+          <p>MAIN MENU</p>
+          <button class="active" type="button" aria-current="page"><span aria-hidden="true">▦</span>Dashboard<i aria-hidden="true"></i></button>
+          
+        </nav>
+        <div class="profile">
+          <span class="avatar">USER</span>
+          <span
+            ><strong>user</strong><small>Energy Analyst</small></span>
+        </div>
+      </aside>
+
+      <!-- Main Dashboard -->
+      <main>
+        <!-- Header -->
+        <header>
+          <div>
+            <h1>Green Hours</h1>
+            <p>AI-Powered Smart Energy Optimizer</p>
+          </div>
+          <div class="toolbar">
+            <span class="live" id="data-source" role="status" aria-live="polite">Loading forecast...</span>
+            <button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button>
+          </div>
+        </header>
+
+        <div class="content">
+          <!-- Metric Cards -->
+          <section class="metrics">
+            <article class="metric" id="metric-peak-supply">
+              <div class="metric-title">
+                PEAK SUPPLY MATCH <span class="sun">☼</span>
+              </div>
+              <h2 id="peak-supply-val">-<small> MW</small></h2>
+              <p id="peak-supply-time">at - solar peak</p>
+              <hr />
+              <footer class="up">Model forecast <em>from Benban</em></footer>
+            </article>
+            <article class="metric" id="metric-savings">
+              <div class="metric-title">
+                SAVINGS PERCENTAGE <span class="blue">↑</span>
+              </div>
+              <h2 id="savings-val">-<small> %</small></h2>
+              <p>operational cost reduction today</p>
+              <hr />
+              <footer class="up">AI optimized <em>grinding schedule</em></footer>
+            </article>
+          </section>
+
+          <!-- Forecast and Shift Schedule -->
+          <section class="dashboard-grid">
+            <article class="panel forecast">
+              <div class="panel-head">
+                <div>
+                  <h3>24-Hour Renewable Generation Forecast</h3>
+                  <p id="forecast-updated">Renewable generation forecast</p>
+                </div>
+                <div class="periods" role="group" aria-label="Forecast range">
+                  <button type="button" aria-pressed="false">1H</button><button type="button" aria-pressed="false">6H</button>
+                  <button class="selected" type="button" aria-pressed="true">24H</button><button type="button" aria-pressed="false">7D</button>
+                </div>
+              </div>
+              <div class="chart" role="region" aria-label="Renewable output forecast chart">
+                <canvas id="forecastChart" role="img" aria-label="Forecast chart loading"></canvas>
+              </div>
+              <div class="legend">
+                <span class="solar">●</span> Recommended green hours
+                <span class="factory" style="margin-left: 15px;">●</span> Other forecast hours
+              </div>
+              <div class="quick-stats">
+                <div class="yellow">
+                  <small>SOLAR PEAK</small><strong id="quick-solar-peak-val">- MW</strong>
+                  <span id="quick-solar-peak-time">at -</span>
+                </div>
+                <div class="pale-blue">
+                  <small>FACTORY LOAD PEAK</small><strong id="quick-load-peak-val">- MW</strong>
+                  <span id="quick-load-peak-time">during operation</span>
+                </div>
+                <div class="pale-green">
+                  <small>SURPLUS WINDOW</small><strong id="quick-surplus-val">- MW</strong>
+                  <span id="quick-surplus-time">-</span>
+                </div>
+                <div>
+                  <small>GRID DEPENDENCY</small><strong id="quick-grid-dependency">0.0%</strong>
+                  <span>during surplus</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel schedule">
+              <div class="panel-head">
+                <div>
+                  <h3>Optimal Shift Schedule</h3>
+                  <p>AI-ranked by energy surplus alignment</p>
+                </div>
+              </div>
+              <div class="shift-list">
+                <div class="shift">
+                  <div class="shift-top">
+                    <div>
+                      <strong id="shift-operation-name">-</strong>
+                      <small id="shift-time-range">-</small>
+                    </div>
+                    <div><b id="shift-savings-percent">-</b><em>optimal</em></div>
+                  </div>
+                  <div class="progress"><i id="shift-progress-bar" style="width: 0%"></i></div>
+                  <div class="shift-bottom">
+                    <span id="shift-co2-saved">-</span>
+                    <span id="shift-savings-detail">-</span>
+                    <button type="button">Shift now</button>
+                  </div>
+                </div>
+                <div class="projected">
+                  <span id="projected-label">Projected CO2 saved today</span>
+                  <strong id="projected-co-tons">-</strong>
+                  <b id="projected-savings-rate">-</b>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="toast" role="status" aria-live="polite"></div>
+
+    <script src="front.js"></script>
+  </body>
+</html>

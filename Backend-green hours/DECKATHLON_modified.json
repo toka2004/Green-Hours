@@ -1,0 +1,47 @@
+{
+  "date": "2026-01-15",
+  "location": "Benban Solar Park, Egypt",
+  "forecast": [
+    {"hour": "00:00", "predicted_mw": 0},
+    {"hour": "01:00", "predicted_mw": 0},
+    {"hour": "02:00", "predicted_mw": 0},
+    {"hour": "03:00", "predicted_mw": 0},
+    {"hour": "04:00", "predicted_mw": 0},
+    {"hour": "05:00", "predicted_mw": 0},
+    {"hour": "06:00", "predicted_mw": 50},
+    {"hour": "07:00", "predicted_mw": 200},
+    {"hour": "08:00", "predicted_mw": 500},
+    {"hour": "09:00", "predicted_mw": 800},
+    {"hour": "10:00", "predicted_mw": 1200},
+    {"hour": "11:00", "predicted_mw": 1500},
+    {"hour": "12:00", "predicted_mw": 1600},
+    {"hour": "13:00", "predicted_mw": 1550},
+    {"hour": "14:00", "predicted_mw": 1400},
+    {"hour": "15:00", "predicted_mw": 1100},
+    {"hour": "16:00", "predicted_mw": 750},
+    {"hour": "17:00", "predicted_mw": 350},
+    {"hour": "18:00", "predicted_mw": 80},
+    {"hour": "19:00", "predicted_mw": 10},
+    {"hour": "20:00", "predicted_mw": 0},
+    {"hour": "21:00", "predicted_mw": 0},
+    {"hour": "22:00", "predicted_mw": 0},
+    {"hour": "23:00", "predicted_mw": 0}
+  ],
+  "green_hours": ["11:00", "12:00", "13:00", "14:00"],
+  "recommendation": "Run the Grinding / Milling line from 11:00 to 14:00 instead of the current 18:00-22:00 schedule to use surplus solar power, save 22.4% on electricity cost, and avoid 27.0 tons of CO2.",
+  "savings_percent": 22.4,
+  "co2_saved_tons": 27.0,
+  "factory_info": {
+    "name": "Virtual Cement Plant (synthetic demo data)",
+    "baseline_load_mw": 50,
+    "flexible_process": "Grinding / Milling line",
+    "flexible_load_mw": 15,
+    "flexible_duration_hours": 4,
+    "current_fixed_schedule": "18:00-22:00"
+  },
+  "cost_breakdown_egp": {
+    "before": 142500,
+    "after": 67500
+  },
+  "assumptions_disclaimer": "Tariff and emission-factor numbers are placeholder assumptions for the demo; replace with real EEHC/EgyptERA figures if you find them before presenting."
+}
